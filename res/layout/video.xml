@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bbg"
+    android:orientation="vertical" >
+
+    <com.example.camera.MjpegView
+        android:id="@+id/mySurfaceView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+         />
+
+
+
+    <ImageButton
+        android:id="@+id/btnLeft"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="left"
+        android:layout_marginBottom="40dp"
+        android:background="#00000000"
+        android:src="@drawable/sym_left" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btnLeft"
+        android:background="#00000000"
+        android:src="@drawable/sym_backward" />
+
+    <ImageButton
+        android:id="@+id/btnStop"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_above="@id/btnBack"
+        android:layout_alignLeft="@id/btnBack"
+        android:background="#00000000"
+        android:src="@drawable/sym_stop" />
+
+    <ImageButton
+        android:id="@+id/btnRight"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/btnLeft"
+        android:layout_toRightOf="@id/btnStop"
+        android:background="#00000000"
+        android:src="@drawable/sym_right" />
+
+    <ImageButton
+        android:id="@+id/btnForward"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_above="@id/btnStop"
+        android:layout_alignLeft="@id/btnBack"
+        android:background="#00000000"
+        android:src="@drawable/sym_forward" />
+
+    <TextView
+        android:id="@+id/logTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gear1"
+        android:layout_toLeftOf="@+id/btnLen"
+        android:layout_toRightOf="@+id/btnRight"
+        android:text="..."
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="高度：15m" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/text1"
+        android:text="速度：20" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/text2"
+        android:text="角速度：30" />
+
+    <ImageButton
+        android:id="@+id/btnLen"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/img" />
+
+    <ImageButton
+        android:id="@+id/btnLen2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/btnLen"
+        android:layout_marginRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/video" />
+
+    <Button
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btnLen"
+        android:text="详细信息" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnLen2"
+        android:layout_below="@+id/checkBox1"
+        android:layout_toLeftOf="@+id/checkBox1"
+        android:layout_toRightOf="@+id/text2"
+        android:fadeScrollbars="false"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingTop="5dip"
+            android:text="状态信息" />
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/text3"
+        android:onClick="onCheckboxClicked"
+        android:text="重力感应" />
+
+</RelativeLayout>
